@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-anton;
+  }
+
+  body {
+    @apply font-inter;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-6;
+  }
+
+  .btn-primary {
+    @apply bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition-all hover:scale-105 flex items-center gap-2;
+  }
+
+  .btn-spotify {
+    @apply bg-[#1DB954] hover:bg-[#1ed760] text-white font-bold py-2 px-4 rounded-full transition-all hover:scale-105 flex items-center gap-2;
+  }
+
+  .btn-youtube {
+    @apply bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition-all hover:scale-105 flex items-center gap-2;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-anton mb-6 relative;
+  }
+
+  .section-title::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-16 h-1 bg-red-600 -mb-2;
+  }
+
+  .host-circle {
+    @apply relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-white shadow-lg transition-all duration-300;
+  }
+
+  .host-circle:hover {
+    @apply border-white transform scale-105 shadow-xl shadow-red-600/20;
+  }
+
+  .episode-title {
+    @apply font-bebas text-xl md:text-2xl tracking-wide leading-tight;
+  }
+
+  .episode-card {
+    @apply bg-gray-900 rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg hover:shadow-red-600/20;
+  }
+
+  .blog-card {
+    @apply bg-gray-900 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-red-600/20;
+  }
+
+  .social-icon {
+    @apply text-white hover:text-red-600 transition-colors;
+  }
+}
